@@ -1,16 +1,5 @@
-# reqs adapated from https://huggingface.co/openbmb/MiniCPM-o-2_6
+# reqs adapated from https://huggingface.co/OPEA/Phi-3.5-vision-instruct-qvision-int4-sym-inc
 Pillow==10.1.0
-transformers==4.44.2
-librosa==0.9.0
-soundfile==0.12.1
-vector-quantize-pytorch==1.18.5
-vocos==0.1.0
-
-# Install from prebuilt wheel so user doesn't have to install CUDA toolkit & compile themselves
-# https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu12torch2.3cxx11abiTRUE-cp310-cp310-linux_x86_64.whl
-# above doesn't work ~ https://github.com/Dao-AILab/flash-attention/issues/975
-https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.8/flash_attn-2.5.8+cu122torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
-
-# only needed if you work with videos
-# decord==0.6.0
-# moviepy==2.1.2
+transformers==4.45.2
+accelerate==0.30.0
+auto-round[gpu]==0.4.4
