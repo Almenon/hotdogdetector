@@ -38,6 +38,7 @@ prompt = processor.tokenizer.apply_chat_template(
 
 image_inputs = Image.open(requests.get(image_url, stream=True).raw)
 aistart = datetime.now()
+print('Thinking...')
 inputs = processor(prompt, image_inputs, return_tensors="pt").to(model.device) 
 
 generation_args = { 
