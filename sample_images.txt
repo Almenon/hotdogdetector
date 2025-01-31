@@ -1,0 +1,7 @@
+hotdog:
+https://images.pexels.com/photos/4676409/pexels-photo-4676409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1
+
+not hotdog:
+https://upload.wikimedia.org/wikipedia/commons/4/45/Funny_Kitten.jpg
+https://echoofwings.com/wp-content/uploads/2023/10/California-White-Chickens.jpg
+https://upload.wikimedia.org/wikipedia/commons/7/7c/Man_with_object_in_his_ear_makes_silly_face.jpg
