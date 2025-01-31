@@ -7,16 +7,16 @@ from transformers import AutoModelForCausalLM, AutoProcessor
 
 startdownload = datetime.now()
 
-model_id = "OPEA/Phi-3.5-vision-instruct-qvision-int4-sym-inc" 
+MODEL_ID = "OPEA/Phi-3.5-vision-instruct-qvision-int4-sym-inc" 
 
 model = AutoModelForCausalLM.from_pretrained(
-  model_id, 
+  MODEL_ID, 
   device_map="auto", 
   trust_remote_code=True, 
   torch_dtype="auto",
   # _attn_implementation='flash_attention_2' # FlashAttention only supports Ampere GPUs or newer :(
 )
-processor = AutoProcessor.from_pretrained(model_id, 
+processor = AutoProcessor.from_pretrained(MODEL_ID, 
   trust_remote_code=True, 
   num_crops=16
 )
