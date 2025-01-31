@@ -1,62 +1,33 @@
 from datetime import datetime
 
-from auto_round import AutoRoundConfig ##must import for auto-round format
 import requests
 from PIL import Image
-from transformers import AutoModelForCausalLM, AutoProcessor
 
-startdownload = datetime.now()
+print('WELCOME TO HOTDOG DETECTOR AI - THE MOST HIGH TECH WAY TO DETECT A HOTDOG, GUARANTEED')
+print('initializing AI... this might take a while\n')
+from ai import AI
+ai = AI("hotdog")
+print('AI initialized 🧠')
 
-MODEL_ID = "OPEA/Phi-3.5-vision-instruct-qvision-int4-sym-inc" 
+def analyze_and_print_result(image_url):
 
-model = AutoModelForCausalLM.from_pretrained(
-  MODEL_ID, 
-  device_map="auto", 
-  trust_remote_code=True, 
-  torch_dtype="auto",
-  # _attn_implementation='flash_attention_2' # FlashAttention only supports Ampere GPUs or newer :(
-)
-processor = AutoProcessor.from_pretrained(MODEL_ID, 
-  trust_remote_code=True, 
-  num_crops=16
-)
+  # download image
+  image = Image.open(requests.get(image_url, stream=True).raw)
 
-print(f'download done in {datetime.now()-startdownload} seconds')
+  # pass image to AI for analysis
+  aistart = datetime.now()
+  print('Thinking...')
+  response = ai.detect_object(image)
 
-image_url = "https://images.pexels.com/photos/4676409/pexels-photo-4676409.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-content = "Is this a hotdog? Just answer yes or no. "
-messages = [
-    {"role": "user", 
-     "content": "<|image_1|>\n"+content},
-]
+  if 'yes' in response.lower():
+    response = "\n\n🌭🌭🌭🌭🌭 HOTDOG DETECTED 🌭🌭🌭🌭🌭\n"
+  else:
+    response = "\n\n🤚🛑🌭 NOT HOTDOG! 🌭🛑🤚\n"
+  print(response)
 
-prompt = processor.tokenizer.apply_chat_template(
-  messages, 
-  tokenize=False, 
-  add_generation_prompt=True
-)
+  print(f'AI thinking complete in {datetime.now()-aistart} seconds')
 
-image_inputs = Image.open(requests.get(image_url, stream=True).raw)
-aistart = datetime.now()
-print('Thinking...')
-inputs = processor(prompt, image_inputs, return_tensors="pt").to(model.device) 
 
-generation_args = { 
-    "max_new_tokens": 1000, 
-    "temperature": 0.0, 
-    "do_sample": False, 
-} 
-
-generate_ids = model.generate(**inputs, 
-  eos_token_id=processor.tokenizer.eos_token_id, 
-  **generation_args
-)
-
-# remove input tokens 
-generate_ids = generate_ids[:, inputs['input_ids'].shape[1]:]
-response = processor.batch_decode(generate_ids, 
-  skip_special_tokens=True, 
-  clean_up_tokenization_spaces=False)[0] 
-
-print(response)
-print(f'ai thinking complete in {datetime.now()-aistart} seconds')
+while True:
+  image_url = input("Paste in a link to the image you want to analyze > ")
+  analyze_and_print_result(image_url)
