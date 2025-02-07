@@ -3,3 +3,4 @@ Pillow==10.1.0
 transformers==4.45.2
 accelerate==0.30.0
 auto-round[gpu]==0.4.4
+requests==2.32.3
