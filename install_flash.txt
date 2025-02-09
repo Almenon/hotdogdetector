@@ -1,7 +1,0 @@
-# Optional
-# # If using flash uncomment _attn_implementation='flash_attention_2'
-
-# Install from prebuilt wheel so user doesn't have to install CUDA toolkit & compile themselves
-# https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu12torch2.3cxx11abiTRUE-cp310-cp310-linux_x86_64.whl
-# above doesn't work ~ https://github.com/Dao-AILab/flash-attention/issues/975
-https://github.com/Dao-AILab/flash-attention/releases/download/v2.5.8/flash_attn-2.5.8+cu122torch2.3cxx11abiFALSE-cp310-cp310-linux_x86_64.whl
