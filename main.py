@@ -11,6 +11,8 @@ print('AI initialized 🧠')
 
 def analyze_and_print_result(image_url):
 
+  image_url = image_url.strip()
+
   # download image
   image = Image.open(requests.get(image_url, stream=True).raw)
 
