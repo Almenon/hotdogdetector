@@ -1,4 +1,4 @@
-This repository contains a python script that runs a multimodal, state-of-the-art AI model for detecting hotdogs. It can run on multiple operating systems and even on old hardware.
+This repository contains a python script that runs a multimodal, state-of-the-art AI model for detecting hotdogs. It can run on multiple operating systems and even on old hardware. It has a simple codebase that's easy to tweak.
 
 # But WHY?
 
