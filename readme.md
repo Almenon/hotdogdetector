@@ -1,3 +1,6 @@
+
+![hotdog](https://github.com/user-attachments/assets/c7b01e35-5fb8-4130-ae76-92e20a7b8b2c)
+
 This repository contains a python script that runs a multimodal, state-of-the-art AI model for detecting hotdogs. It can run on multiple operating systems and even on old hardware. It has a simple codebase that's easy to tweak.
 
 # But WHY?
@@ -20,7 +23,7 @@ The answer was "yes, but not very fast" 🐢.
 
 
 
-I was also curious what the elctricity usage would be. It turns out it's very small. The max draw of a GTX 1060 is 120 watts, and where I live electricity is .14 cents for an hour of 1000 watts. You could detect hotdogs non-stop for an hour and still not even pay 14 cents. Newer graphics cards, despite using more watts, use less electricity per image because they are so much faster.
+I was also curious what the elctricity usage would be. It turns out it's very small. The max draw of a GTX 1060 is 120 watts, and where I live electricity is 14 cents for an hour of 1000 watts. You could detect hotdogs non-stop for an hour and still not even pay 14 cents. Newer graphics cards, despite using more watts, use less electricity per image because they are so much faster.
 
 # Requirements
 Python 3.10 or 3.11 (higher versions may work too)
