@@ -1,3 +1,27 @@
+This repository contains a python script that runs a multimodal, state-of-the-art AI model for detecting hotdogs. It can run on multiple operating systems and even on old hardware.
+
+# But WHY?
+
+You go to Costco. You are about to buy the legendary $1.5 hotdog, but a stranger in a trenchcoat approaches you and offers a blackmarket 50¢ hotdog. 
+
+You pause. The stranger is trustworthy, but this deal seems too good to be true. You whip out your computer, manuever it around to take a picture of the hotdog, save it, run `python main.py`, and wait 20 seconds. The AI says it's not a hotdog! You scream and smack the fake hotdog out of their hands. 
+
+The authorities are alerted and the stranger is arrested. You're a hero!
+
+## But seriously, why?
+
+I was curious if
+
+A) I could run a LLM on old hardware and 
+
+B) how fast it would run
+
+The answer was "yes, but not very fast" 🐢. 
+
+
+
+I was also curious what the elctricity usage would be. It turns out it's very small. The max draw of a GTX 1060 is 120 watts, and where I live electricity is .14 cents for an hour of 1000 watts. You could detect hotdogs non-stop for an hour and still not even pay 14 cents. Newer graphics cards, despite using more watts, use less electricity per image because they are so much faster.
+
 # Requirements
 Python 3.10 or 3.11 (higher versions may work too)
 
