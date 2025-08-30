@@ -23,7 +23,11 @@ The answer was "yes, but not very fast" 🐢.
 
 
 
-I was also curious what the elctricity usage would be. It turns out it's very small. The max draw of a GTX 1060 is 120 watts, and where I live electricity is 14 cents for an hour of 1000 watts. You could detect hotdogs non-stop for an hour and still not even pay 14 cents. Newer graphics cards, despite using more watts, use less electricity per image because they are so much faster.
+I was also curious what the elctricity usage would be. It turns out it's very small. The max draw of a GTX 1060 is 120 watts, and where I live electricity is 14 cents for an hour of 1000 watts. You could detect hotdogs non-stop for an hour and still not even pay 14 cents in GPU usage. Newer graphics cards, despite using more watts, use less electricity per image because they are so much faster.
+
+If you're wondering what electricity usage is when using an actual cloud AI and not some silly hotdog detector, take a look at [this report](https://cloud.google.com/blog/products/infrastructure/measuring-the-environmental-impact-of-ai-inference/) by Google. An average AI query (as of 2025) takes .24 watt-hours, so about 4,000 queries would consume just about 14 cents of electricity. Still pretty cheap.
+
+I'm probably sounding like a total AI stan right now, so I should add a disclaimer: I'm just focusing on simple AI text conversations. Extended thinking or image generation are probably more expensive.
 
 # Requirements
 Python 3.10 or 3.11 (higher versions may work too)
